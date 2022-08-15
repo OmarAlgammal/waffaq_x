@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>226802698678-6cdstolatrr668htdmuqpjk4cuovvh2k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.226802698678-6cdstolatrr668htdmuqpjk4cuovvh2k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAiOaOe3KLfHUIcXmmh4xs4pY4j9ITTaY8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>226802698678</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.waffaqx</string>
+	<key>PROJECT_ID</key>
+	<string>waffaq-x</string>
+	<key>STORAGE_BUCKET</key>
+	<string>waffaq-x.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:226802698678:ios:18ead9cccad0b00f399917</string>
+</dict>
+</plist>

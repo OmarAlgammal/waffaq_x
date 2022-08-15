@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="119.3" height="107.845" viewBox="0 0 119.3 107.845">
+  <g id="empty_list_icon" transform="translate(-147 -587.155)">
+    <g id="empty_list_icon-2" data-name="empty_list_icon" transform="translate(-11.95)">
+      <path id="Subtraction_56" data-name="Subtraction 56" d="M-904.208,72.966a3,3,0,0,0,3-3V11.174a3,3,0,0,0-3-3h-20.341V70.848a6.992,6.992,0,0,1-.328,2.118h20.669m0,2h-24.5a5,5,0,0,0,2.163-4.118V6.174h22.341a5.006,5.006,0,0,1,5,5V69.966A5.006,5.006,0,0,1-904.208,74.966Z" transform="translate(1165.433 591.565)" fill="#707070"/>
+      <path id="Subtraction_57" data-name="Subtraction 57" d="M-941.736,78.258a6.893,6.893,0,0,1-.688-3V9.41a7.008,7.008,0,0,1,7-7h8.036A3,3,0,0,0-928.9,2H-963a3,3,0,0,0-3,3V75.258a3,3,0,0,0,3,3h21.264m6.17,2H-963a5.006,5.006,0,0,1-5-5V5a5.006,5.006,0,0,1,5-5h34.1a5,5,0,0,1,4.966,4.41h-11.486a5.006,5.006,0,0,0-5,5V75.258a5.034,5.034,0,0,0,4.858,5Z" transform="translate(1139.856 587.155)" fill="#707070"/>
+      <path id="Rectangle_210" data-name="Rectangle 210" d="M5,2A3,3,0,0,0,2,5V72.848a3,3,0,0,0,3,3H38.452a3,3,0,0,0,3-3V5a3,3,0,0,0-3-3H5M5,0H38.452a5,5,0,0,1,5,5V72.848a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0Z" transform="translate(197.433 589.565)" fill="#707070"/>
+      <path id="Line_24" data-name="Line 24" d="M117.3,1H0A1,1,0,0,1-1,0,1,1,0,0,1,0-1H117.3a1,1,0,0,1,1,1A1,1,0,0,1,117.3,1Z" transform="translate(159.95 670.5)" fill="#707070"/>
+    </g>
+    <text id="القائمة_فارغة" data-name="القائمة فارغة" transform="translate(160 690)" fill="#707070" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">القائمة فارغة</tspan></text>
+  </g>
+</svg>

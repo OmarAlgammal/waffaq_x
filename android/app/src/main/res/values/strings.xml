@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"Waffaq X"</string>
+    <string name="facebook_app_id">758908718680209</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">fb120683044bfd497d2a6a8b8e517d1b</string>
+
+
+</resources>

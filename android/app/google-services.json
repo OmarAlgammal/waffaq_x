@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "226802698678",
+    "project_id": "waffaq-x",
+    "storage_bucket": "waffaq-x.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226802698678:android:14d295ba62117a78399917",
+        "android_client_info": {
+          "package_name": "com.devomar.waffaqx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226802698678-u7k1rr9b9ktt5q9fcuv7b0pgmke70ht2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfVlKhd0bQ0YAt5MRrynYLPcex-jcNi2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226802698678-u7k1rr9b9ktt5q9fcuv7b0pgmke70ht2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "226802698678-6cdstolatrr668htdmuqpjk4cuovvh2k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.waffaqx"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
