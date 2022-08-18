@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,6 +22,7 @@ import 'utilities/constants/constantsDimens.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseFirestore.instance.clearPersistence();
   runApp(const MyApp());
 
 }
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.landingPage,
+        initialRoute: AppRoutes.homePage,
         onGenerateRoute: onGenerate,
         theme: ThemeData(
             primarySwatch: myCustomPrimaryColor,

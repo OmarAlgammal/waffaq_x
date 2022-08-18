@@ -226,7 +226,8 @@ class MobilesFiltrationHelper {
         required double biggestDifferenceBetweenScreenSizes}) {
     String requiredBrandName = mobile.brandName.toLowerCase();
     String requiredMobileName = mobile.mobileName.toLowerCase();
-    bool curvedDisplayForRequiredMobile = mobile.curvedDisplay;
+    bool requiredMobileNotch = mobile.hasNotch;
+    bool requiredCurvedDisplay = mobile.curvedDisplay;
 
     List<MobileTheme> filteredList = [];
 
@@ -242,7 +243,7 @@ class MobilesFiltrationHelper {
 
         if (comingBrand == requiredBrandName &&
             comingModel.displaySize == mobile.displaySize &&
-            comingModel.curvedDisplay == curvedDisplayForRequiredMobile &&
+            comingModel.curvedDisplay == requiredCurvedDisplay &&
             requiredMobileName != comingMobileName) {
           filteredList.add(getMobileWithTheme(comingModel));
         }
@@ -265,6 +266,7 @@ class MobilesFiltrationHelper {
           mobiles[mobileModelIndex].mobileName.toLowerCase();
           Mobile comingMobile = mobiles[mobileModelIndex];
           bool comingCurvedScreen = comingMobile.curvedDisplay;
+          bool comingNotch = comingMobile.hasNotch;
           double differenceBetweenTwoScreenSizes = double.parse(
               (comingMobile.displaySize - mobile.displaySize)
                   .abs()
@@ -274,7 +276,8 @@ class MobilesFiltrationHelper {
           if (brandName == comingBrandName &&
               comingBrandName != appleText.toLowerCase() &&
               requiredMobileName != comingMobileName &&
-              comingCurvedScreen == curvedDisplayForRequiredMobile &&
+              requiredMobileNotch == comingNotch &&
+              comingCurvedScreen == requiredCurvedDisplay &&
               differenceBetweenTwoScreenSizes <=
                   biggestDifferenceBetweenScreenSizes) {
             filteredList.add(getMobileWithTheme(comingMobile));

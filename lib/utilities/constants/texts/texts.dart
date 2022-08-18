@@ -53,8 +53,8 @@ const choiceBrandErrorText = 'اختر الشركة';
 const mobileNameHintText = 'اسم الهاتف';
 const mobileNameErrorText = 'ادخل اسم الهاتف';
 
-const displayTypeHintText = 'نوع الشاشة';
-const displayTypeErrorText = 'أدخل نوع الشاشة';
+const displayHintText = 'الشاشة';
+const displayErrorText = 'أدخل الشاشة';
 
 const displaySizeHintText = 'حجم الشاشة';
 const displaySizeErrorText = 'أدخل حجم الشاشة';
@@ -81,11 +81,9 @@ const networkTechnologyErrorText = 'أدخل تكنولوجيا الشيكة';
 const storageAndRamHintText = 'التخزين والرام';
 const storageAndRamErrorText = 'أدخل التخزين والرام';
 
-const mainCameraHintText = 'الكاميرات الأساسية';
-const mainCameraErrorText = 'أدخل الكاميرات الأساسية';
+const mainCameraHintText = 'الكاميرات';
+const mainCameraErrorText = 'أدخل مواصفات الكاميرات';
 
-const selfieCameraHintText = 'الكاميرا الأمامية';
-const selfieCameraErrorText = 'أدخل الكاميرا الأمامية';
 
 const chargingSpeedHintText = 'سرعة الشحن';
 const chargingSpeedErrorText = 'أدخل سرعة الشحن';

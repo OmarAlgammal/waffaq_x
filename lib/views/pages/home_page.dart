@@ -14,8 +14,9 @@ import 'package:waffaq_x/utilities/constants/texts/api.dart';
 import 'package:waffaq_x/utilities/constants/texts/paths.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
 import 'package:waffaq_x/views/widgets/dividers/skinnyDivider.dart';
-import 'package:waffaq_x/views/widgets/input/search_box.dart';
+import 'package:waffaq_x/views/widgets/input/search_box_to_move.dart';
 import 'package:waffaq_x/views/widgets/items_designs/brand_item_design.dart';
+import 'package:waffaq_x/views/widgets/texts/error_occurred.dart';
 import 'package:waffaq_x/views/widgets/texts/helper_text.dart';
 import 'package:waffaq_x/views/widgets/texts/loading.dart';
 
@@ -47,13 +48,11 @@ class HomePage extends StatelessWidget {
           }, icon: const Icon(logoutIcon, color:  blackColor,)),
 
 // more icon
+        if (user != null)
           StreamBuilder<UserModel>(
             stream: FirestoreServices.instance.streamDoc(path: '$usersPath${user!.uid}', builder: (map) => UserModel.fromJson(map)),
             builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting){
-                return const Loading();
-              }
-              else{
+              if (snapshot.connectionState == ConnectionState.active || snapshot.connectionState == ConnectionState.done){
                 final data = snapshot.data!;
                 if (!data.abilityToRemoveComp && !data.abilityToAddCoverComp && !data.abilityToAddMobiles){
                   return const SizedBox();
@@ -82,69 +81,69 @@ class HomePage extends StatelessWidget {
                                   textDirection: TextDirection.rtl,
                                   children: [
 // add new mobile button
-                                  if (snapshot.data!.abilityToAddMobiles)
-                                    Directionality(
-                                      textDirection: TextDirection.rtl,
-                                      child: ListTile(
-                                        onTap: () {
-                                          Navigator.pop(context);
-                                          Navigator.pushNamed(
-                                              context, AppRoutes.addMobilePage);
-                                        },
-                                        leading: const Icon(addIcon, color: blackColor,),
-                                        title: const Text(
-                                          addNewMobileText,
-                                        ),),
-                                    ),
+                                    if (snapshot.data!.abilityToAddMobiles)
+                                      Directionality(
+                                        textDirection: TextDirection.rtl,
+                                        child: ListTile(
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                            Navigator.pushNamed(
+                                                context, AppRoutes.addMobilePage);
+                                          },
+                                          leading: const Icon(addIcon, color: blackColor,),
+                                          title: const Text(
+                                            addNewMobileText,
+                                          ),),
+                                      ),
                                     const SkinnyDivider(),
 // add cover comp
-                                  if (snapshot.data!.abilityToAddCoverComp)
-                                    Directionality(
-                                      textDirection: TextDirection.rtl,
-                                      child: ListTile(
-                                        onTap: () {
-                                          Navigator.pop(context);
-                                          Navigator.pushNamed(
-                                              context, AppRoutes.addCompPage);
-                                        },
-                                        leading: const Icon(addIcon, color: blackColor),
-                                        title: const Text(
-                                          addCoversCompatibilitiesText,
-                                          style: TextStyle(
-                                            fontSize: size16, color: blackColor,),
+                                    if (snapshot.data!.abilityToAddCoverComp)
+                                      Directionality(
+                                        textDirection: TextDirection.rtl,
+                                        child: ListTile(
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                            Navigator.pushNamed(
+                                                context, AppRoutes.addCompPage);
+                                          },
+                                          leading: const Icon(addIcon, color: blackColor),
+                                          title: const Text(
+                                            addCoversCompatibilitiesText,
+                                            style: TextStyle(
+                                              fontSize: size16, color: blackColor,),
+                                          ),
                                         ),
                                       ),
-                                    ),
 // compatibilities button
-                                  if (snapshot.data!.abilityToRemoveComp)
-                                    TextButton(
+                                    if (snapshot.data!.abilityToRemoveComp)
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                            Navigator.pushNamed(context,
+                                                AppRoutes.coverCompPage);
+                                          },
+                                          child: const Text(
+                                            coversCompatibilitiesText,
+                                            textDirection: TextDirection.rtl,
+                                            style: TextStyle(
+                                                fontSize: size16, color: blackColor),
+                                          )),
+                                    const SkinnyDivider(),
+// set new admin button
+                                    if (snapshot.data!.isHeTheMainController)
+                                      TextButton(
                                         onPressed: () {
                                           Navigator.pop(context);
-                                          Navigator.pushNamed(context,
-                                              AppRoutes.coverCompPage);
+                                          Navigator.pushNamed(
+                                              context, AppRoutes.setAdminPage);
                                         },
                                         child: const Text(
-                                          coversCompatibilitiesText,
+                                          setNewAdminText,
                                           textDirection: TextDirection.rtl,
                                           style: TextStyle(
                                               fontSize: size16, color: blackColor),
-                                        )),
-                                    const SkinnyDivider(),
-// set new admin button
-                                  if (snapshot.data!.isHeTheMainController)
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                        Navigator.pushNamed(
-                                            context, AppRoutes.setAdminPage);
-                                      },
-                                      child: const Text(
-                                        setNewAdminText,
-                                        textDirection: TextDirection.rtl,
-                                        style: TextStyle(
-                                            fontSize: size16, color: blackColor),
+                                        ),
                                       ),
-                                    ),
                                     const SkinnyDivider(),
 
                                   ],
@@ -155,8 +154,11 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 );
-
               }
+              else if (snapshot.hasError){
+                return const ErrorOccurred();
+              }
+              return const SizedBox();
             }
           ),
           gap16,
@@ -167,7 +169,7 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: [
             const HelperText(helperText: searchForCompatibilitiesText),
-            SearchBox(
+            SearchBoxToMove(
               onPressed: () {
                 Navigator.pushNamed(
                     context, AppRoutes.searchForCompPage);

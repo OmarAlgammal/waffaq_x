@@ -12,6 +12,8 @@ import 'package:waffaq_x/utilities/mobiles_filtration_helper.dart';
 import 'package:waffaq_x/views/models/mobile_theme.dart';
 import 'package:waffaq_x/views/widgets/buttons/wipe_button.dart';
 import 'package:waffaq_x/views/widgets/dividers/skinnyDivider.dart';
+import 'package:waffaq_x/views/widgets/input/search_box.dart';
+import 'package:waffaq_x/views/widgets/input/search_box_to_move.dart';
 import 'package:waffaq_x/views/widgets/items_designs/mobile_item_design.dart';
 import 'package:waffaq_x/views/widgets/texts/error_occurred.dart';
 import 'package:waffaq_x/views/widgets/texts/helper_text.dart';
@@ -27,13 +29,13 @@ class SelectMobilePage extends StatefulWidget {
 
 class _SelectMobilePageState extends State<SelectMobilePage> {
 
-  final TextEditingController _searchTextController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   final MobilesFiltrationHelper _mobilesHelper = MobilesFiltrationHelper();
   late List<MobileTheme> _searchResult;
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<AllMobilesBloc>(context).add(LoadAllMobiles());
+    String argument = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -41,14 +43,21 @@ class _SelectMobilePageState extends State<SelectMobilePage> {
           child: ListView(
             children: [
               gap24,
-              const HelperText(helperText: selectFirstMobileText),
+              HelperText(helperText: argument),
               gap24,
               Row(
                 children: [
-                  searchTextField(),
+                Expanded(
+                flex: 1,
+                child: SearchBox(searchHint: searchHintText, searchController: _searchController, onChanged: (String searchText) {
+                  setState(() {
+
+                  });
+                },),
+              ),
                   WipeButton(buttonText: clearText, onPressed: (){
                     setState(() {
-                      _searchTextController.clear();
+                      _searchController.clear();
                     });
                   },),
                 ],
@@ -63,7 +72,7 @@ class _SelectMobilePageState extends State<SelectMobilePage> {
                   }
                   else if (state is MobilesLoadedSuccessfully){
                     /// get search results
-                    _searchResult = _mobilesHelper.searchResult(mobileTheme: state.mobilesTheme, searchText: _searchTextController.text);
+                    _searchResult = _mobilesHelper.searchResult(mobileTheme: state.mobilesTheme, searchText: _searchController.text);
                     if (_searchResult.isEmpty){
                       return const NoResultsFound();
                     }
@@ -96,7 +105,7 @@ class _SelectMobilePageState extends State<SelectMobilePage> {
       child: Padding(
         padding: paddingH8,
         child: TextField(
-          controller: _searchTextController,
+          controller: _searchController,
           autofocus: true,
           textDirection: TextDirection.rtl,
           onChanged: (String text){

@@ -9,14 +9,13 @@ class Mobile with _$Mobile{
 
   factory Mobile({
     required String brandName,
-
     required String mobileId,
     required String mobileName,
     required double displaySize,
+    required String display,
     required String processor,
     required String storageAndRam,
-    required String mainCameras,
-    required String selfieCameras,
+    required String cameras,
     required String battery,
     required String os,
     required bool hasNotch,

@@ -10,6 +10,7 @@ import 'package:waffaq_x/utilities/mobiles_filtration_helper.dart';
 import 'package:waffaq_x/views/widgets/assets/search_helper_results.dart';
 import 'package:waffaq_x/views/widgets/buttons/wipe_button.dart';
 import 'package:waffaq_x/views/widgets/dividers/skinnyDivider.dart';
+import 'package:waffaq_x/views/widgets/input/search_box.dart';
 import 'package:waffaq_x/views/widgets/items_designs/mobile_item_design.dart';
 import 'package:waffaq_x/views/widgets/texts/error_occurred.dart';
 import 'package:waffaq_x/views/widgets/texts/helper_text.dart';
@@ -43,41 +44,20 @@ class _SearchForCompPageState extends State<SearchForCompPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 // search text field
-                Expanded(
-                  flex: 1,
-                  child: DecoratedBox(
-                    decoration: const BoxDecoration(
-                      borderRadius: circular12,
-                      color: brightGrayColor,
-                    ),
-                    child: Padding(
-                      padding: paddingH8,
-                      child: TextField(
-                        controller: _searchController,
-                        autofocus: true,
-                        textDirection: TextDirection.rtl,
-                        decoration: const InputDecoration(
-                          hintText: searchHintText,
-                          hintTextDirection: TextDirection.rtl,
-                          border: InputBorder.none,
-                          fillColor: whiteColor,
-                          focusColor: whiteColor,
-                        ),
-                        onChanged: (String searchText) {
-                          if (searchText.trim().isNotEmpty) {
-                            setState(() {
-                              _userNotSearching = false;
-                            });
-                          } else {
-                            setState(() {
-                              _userNotSearching = true;
-                            });
-                          }
-                        },
-                      ),
-                    ),
-                  ),
-                ),
+              Expanded(
+                flex: 1,
+                child: SearchBox(searchHint: searchHintText, searchController: _searchController, onChanged: (String searchText) {
+                  if (searchText.trim().isNotEmpty) {
+                    setState(() {
+                      _userNotSearching = false;
+                    });
+                  } else {
+                    setState(() {
+                      _userNotSearching = true;
+                    });
+                  }
+                },),
+              ),
 // clear search text
                 Padding(
                     padding: paddingH4,

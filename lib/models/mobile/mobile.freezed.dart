@@ -24,10 +24,10 @@ mixin _$Mobile {
   String get mobileId => throw _privateConstructorUsedError;
   String get mobileName => throw _privateConstructorUsedError;
   double get displaySize => throw _privateConstructorUsedError;
+  String get display => throw _privateConstructorUsedError;
   String get processor => throw _privateConstructorUsedError;
   String get storageAndRam => throw _privateConstructorUsedError;
-  String get mainCameras => throw _privateConstructorUsedError;
-  String get selfieCameras => throw _privateConstructorUsedError;
+  String get cameras => throw _privateConstructorUsedError;
   String get battery => throw _privateConstructorUsedError;
   String get os => throw _privateConstructorUsedError;
   bool get hasNotch => throw _privateConstructorUsedError;
@@ -47,10 +47,10 @@ abstract class $MobileCopyWith<$Res> {
       String mobileId,
       String mobileName,
       double displaySize,
+      String display,
       String processor,
       String storageAndRam,
-      String mainCameras,
-      String selfieCameras,
+      String cameras,
       String battery,
       String os,
       bool hasNotch,
@@ -71,10 +71,10 @@ class _$MobileCopyWithImpl<$Res> implements $MobileCopyWith<$Res> {
     Object? mobileId = freezed,
     Object? mobileName = freezed,
     Object? displaySize = freezed,
+    Object? display = freezed,
     Object? processor = freezed,
     Object? storageAndRam = freezed,
-    Object? mainCameras = freezed,
-    Object? selfieCameras = freezed,
+    Object? cameras = freezed,
     Object? battery = freezed,
     Object? os = freezed,
     Object? hasNotch = freezed,
@@ -97,6 +97,10 @@ class _$MobileCopyWithImpl<$Res> implements $MobileCopyWith<$Res> {
           ? _value.displaySize
           : displaySize // ignore: cast_nullable_to_non_nullable
               as double,
+      display: display == freezed
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as String,
       processor: processor == freezed
           ? _value.processor
           : processor // ignore: cast_nullable_to_non_nullable
@@ -105,13 +109,9 @@ class _$MobileCopyWithImpl<$Res> implements $MobileCopyWith<$Res> {
           ? _value.storageAndRam
           : storageAndRam // ignore: cast_nullable_to_non_nullable
               as String,
-      mainCameras: mainCameras == freezed
-          ? _value.mainCameras
-          : mainCameras // ignore: cast_nullable_to_non_nullable
-              as String,
-      selfieCameras: selfieCameras == freezed
-          ? _value.selfieCameras
-          : selfieCameras // ignore: cast_nullable_to_non_nullable
+      cameras: cameras == freezed
+          ? _value.cameras
+          : cameras // ignore: cast_nullable_to_non_nullable
               as String,
       battery: battery == freezed
           ? _value.battery
@@ -143,10 +143,10 @@ abstract class _$$_MobileCopyWith<$Res> implements $MobileCopyWith<$Res> {
       String mobileId,
       String mobileName,
       double displaySize,
+      String display,
       String processor,
       String storageAndRam,
-      String mainCameras,
-      String selfieCameras,
+      String cameras,
       String battery,
       String os,
       bool hasNotch,
@@ -168,10 +168,10 @@ class __$$_MobileCopyWithImpl<$Res> extends _$MobileCopyWithImpl<$Res>
     Object? mobileId = freezed,
     Object? mobileName = freezed,
     Object? displaySize = freezed,
+    Object? display = freezed,
     Object? processor = freezed,
     Object? storageAndRam = freezed,
-    Object? mainCameras = freezed,
-    Object? selfieCameras = freezed,
+    Object? cameras = freezed,
     Object? battery = freezed,
     Object? os = freezed,
     Object? hasNotch = freezed,
@@ -194,6 +194,10 @@ class __$$_MobileCopyWithImpl<$Res> extends _$MobileCopyWithImpl<$Res>
           ? _value.displaySize
           : displaySize // ignore: cast_nullable_to_non_nullable
               as double,
+      display: display == freezed
+          ? _value.display
+          : display // ignore: cast_nullable_to_non_nullable
+              as String,
       processor: processor == freezed
           ? _value.processor
           : processor // ignore: cast_nullable_to_non_nullable
@@ -202,13 +206,9 @@ class __$$_MobileCopyWithImpl<$Res> extends _$MobileCopyWithImpl<$Res>
           ? _value.storageAndRam
           : storageAndRam // ignore: cast_nullable_to_non_nullable
               as String,
-      mainCameras: mainCameras == freezed
-          ? _value.mainCameras
-          : mainCameras // ignore: cast_nullable_to_non_nullable
-              as String,
-      selfieCameras: selfieCameras == freezed
-          ? _value.selfieCameras
-          : selfieCameras // ignore: cast_nullable_to_non_nullable
+      cameras: cameras == freezed
+          ? _value.cameras
+          : cameras // ignore: cast_nullable_to_non_nullable
               as String,
       battery: battery == freezed
           ? _value.battery
@@ -238,10 +238,10 @@ class _$_Mobile implements _Mobile {
       required this.mobileId,
       required this.mobileName,
       required this.displaySize,
+      required this.display,
       required this.processor,
       required this.storageAndRam,
-      required this.mainCameras,
-      required this.selfieCameras,
+      required this.cameras,
       required this.battery,
       required this.os,
       required this.hasNotch,
@@ -259,13 +259,13 @@ class _$_Mobile implements _Mobile {
   @override
   final double displaySize;
   @override
+  final String display;
+  @override
   final String processor;
   @override
   final String storageAndRam;
   @override
-  final String mainCameras;
-  @override
-  final String selfieCameras;
+  final String cameras;
   @override
   final String battery;
   @override
@@ -277,7 +277,7 @@ class _$_Mobile implements _Mobile {
 
   @override
   String toString() {
-    return 'Mobile(brandName: $brandName, mobileId: $mobileId, mobileName: $mobileName, displaySize: $displaySize, processor: $processor, storageAndRam: $storageAndRam, mainCameras: $mainCameras, selfieCameras: $selfieCameras, battery: $battery, os: $os, hasNotch: $hasNotch, curvedDisplay: $curvedDisplay)';
+    return 'Mobile(brandName: $brandName, mobileId: $mobileId, mobileName: $mobileName, displaySize: $displaySize, display: $display, processor: $processor, storageAndRam: $storageAndRam, cameras: $cameras, battery: $battery, os: $os, hasNotch: $hasNotch, curvedDisplay: $curvedDisplay)';
   }
 
   @override
@@ -291,13 +291,11 @@ class _$_Mobile implements _Mobile {
                 .equals(other.mobileName, mobileName) &&
             const DeepCollectionEquality()
                 .equals(other.displaySize, displaySize) &&
+            const DeepCollectionEquality().equals(other.display, display) &&
             const DeepCollectionEquality().equals(other.processor, processor) &&
             const DeepCollectionEquality()
                 .equals(other.storageAndRam, storageAndRam) &&
-            const DeepCollectionEquality()
-                .equals(other.mainCameras, mainCameras) &&
-            const DeepCollectionEquality()
-                .equals(other.selfieCameras, selfieCameras) &&
+            const DeepCollectionEquality().equals(other.cameras, cameras) &&
             const DeepCollectionEquality().equals(other.battery, battery) &&
             const DeepCollectionEquality().equals(other.os, os) &&
             const DeepCollectionEquality().equals(other.hasNotch, hasNotch) &&
@@ -313,10 +311,10 @@ class _$_Mobile implements _Mobile {
       const DeepCollectionEquality().hash(mobileId),
       const DeepCollectionEquality().hash(mobileName),
       const DeepCollectionEquality().hash(displaySize),
+      const DeepCollectionEquality().hash(display),
       const DeepCollectionEquality().hash(processor),
       const DeepCollectionEquality().hash(storageAndRam),
-      const DeepCollectionEquality().hash(mainCameras),
-      const DeepCollectionEquality().hash(selfieCameras),
+      const DeepCollectionEquality().hash(cameras),
       const DeepCollectionEquality().hash(battery),
       const DeepCollectionEquality().hash(os),
       const DeepCollectionEquality().hash(hasNotch),
@@ -341,10 +339,10 @@ abstract class _Mobile implements Mobile {
       required final String mobileId,
       required final String mobileName,
       required final double displaySize,
+      required final String display,
       required final String processor,
       required final String storageAndRam,
-      required final String mainCameras,
-      required final String selfieCameras,
+      required final String cameras,
       required final String battery,
       required final String os,
       required final bool hasNotch,
@@ -361,13 +359,13 @@ abstract class _Mobile implements Mobile {
   @override
   double get displaySize;
   @override
+  String get display;
+  @override
   String get processor;
   @override
   String get storageAndRam;
   @override
-  String get mainCameras;
-  @override
-  String get selfieCameras;
+  String get cameras;
   @override
   String get battery;
   @override

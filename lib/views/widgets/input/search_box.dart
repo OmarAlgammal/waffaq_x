@@ -2,34 +2,37 @@
 import 'package:flutter/material.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
-import 'package:waffaq_x/utilities/constants/texts/texts.dart';
-
 
 class SearchBox extends StatelessWidget {
-  const SearchBox({Key? key, this.title, required this.onPressed}) : super(key: key);
+  const SearchBox({Key? key, required this.searchHint, required this.searchController, required this.onChanged}) : super(key: key);
 
-  final String? title;
-  final VoidCallback onPressed;
-
+  final TextEditingController searchController;
+  final String searchHint;
+  final Function(String) onChanged;
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        fixedSize: const Size.fromHeight(size56),
-        backgroundColor: brightGrayColor,
-        shape: const RoundedRectangleBorder(
-          borderRadius: circular12,
-        )
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        borderRadius: circular12,
+        color: brightGrayColor,
       ),
-    onPressed: onPressed,
-        child: Align(
-          alignment: Alignment.centerRight,
-          child: Text(
-            title?? searchHintText,
-            style: const TextStyle(fontSize: size16, color: grayColor,),
-            textDirection: TextDirection.ltr,
+      child: Padding(
+        padding: paddingH8,
+        child: TextField(
+          controller: searchController,
+          autofocus: true,
+          textDirection: TextDirection.rtl,
+          decoration: InputDecoration(
+            hintText: searchHint,
+            hintTextDirection: TextDirection.rtl,
+            border: InputBorder.none,
+            fillColor: whiteColor,
+            focusColor: whiteColor,
           ),
+          onChanged: onChanged,
         ),
+      ),
     );
   }
 }
+

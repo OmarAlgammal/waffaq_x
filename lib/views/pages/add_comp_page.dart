@@ -11,7 +11,7 @@ import 'package:waffaq_x/utilities/constants/texts/api.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
 import 'package:waffaq_x/views/models/mobile_theme.dart';
 import 'package:waffaq_x/views/widgets/buttons/circular_button.dart';
-import 'package:waffaq_x/views/widgets/input/search_box.dart';
+import 'package:waffaq_x/views/widgets/input/search_box_to_move.dart';
 import 'package:waffaq_x/views/widgets/show_my_snack_bar.dart';
 import 'package:waffaq_x/views/widgets/texts/loading.dart';
 
@@ -50,7 +50,7 @@ class _AddCompPageState extends State<AddCompPage> {
                 ),
               ),
 // first device search box
-              SearchBox(
+              SearchBoxToMove(
                 title: firstMobileName,
                 onPressed: () async {
                   var result = await Navigator.pushNamed(
@@ -72,7 +72,7 @@ class _AddCompPageState extends State<AddCompPage> {
                 ),
               ),
 // second device search box
-              SearchBox(
+              SearchBoxToMove(
                 title: secondMobileName,
                 onPressed: () async {
                   var result = await Navigator.pushNamed(

@@ -28,9 +28,9 @@ class _AddMobilePageState extends State<AddMobilePage> {
   final mobileFromKey = GlobalKey<FormState>();
   TextEditingController mobileNameController = TextEditingController();
   TextEditingController displaySizeController = TextEditingController();
+  TextEditingController displayController = TextEditingController();
   TextEditingController storageAndRamController = TextEditingController();
-  TextEditingController mainCameraController = TextEditingController();
-  TextEditingController selfieCameraController = TextEditingController();
+  TextEditingController camerasController = TextEditingController();
   TextEditingController processorController = TextEditingController();
   TextEditingController osController = TextEditingController();
   TextEditingController batteryController = TextEditingController();
@@ -58,6 +58,14 @@ class _AddMobilePageState extends State<AddMobilePage> {
                 listener: (context, state){
                   if (state is DataAddedSuccessfully){
                     showMySnackBar(context: context, content: mobileAddedSuccessfullyText, color: Colors.green);
+                    mobileNameController.clear();
+                        displaySizeController.clear();
+                        displayController.clear();
+                    storageAndRamController.clear();
+                    camerasController.clear();
+                    processorController.clear();
+                    osController.clear();
+                    batteryController.clear();
                   }else if (state is FailedToAddData){
                     showMySnackBar(context: context, content: anErrorOccurredText, color: Colors.red);
                   }
@@ -73,10 +81,10 @@ class _AddMobilePageState extends State<AddMobilePage> {
                           mobileId: mobileNameController.text,
                           mobileName: mobileNameController.text,
                           displaySize: double.parse(displaySizeController.text),
+                          display: displayController.text,
                           processor: processorController.text,
                           storageAndRam: storageAndRamController.text,
-                          mainCameras: mainCameraController.text,
-                          selfieCameras: selfieCameraController.text,
+                          cameras: camerasController.text,
                           battery: batteryController.text,
                           os: osController.text,
                           hasNotch: _hasNotch, curvedDisplay: _curvedDisplay
@@ -140,20 +148,6 @@ class _AddMobilePageState extends State<AddMobilePage> {
               return null;
             },
           ),
-// display size
-          TextFormField(
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              labelText: displaySizeHintText,
-            ),
-            controller: displaySizeController,
-            validator: (text) {
-              if (text == null || text.isEmpty) {
-                return displaySizeErrorText;
-              }
-              return null;
-            },
-          ),
 // processor field
           TextFormField(
             decoration: const InputDecoration(
@@ -181,13 +175,13 @@ class _AddMobilePageState extends State<AddMobilePage> {
               return null;
             },
           ),
-// main camera field
+// cameras field
           TextFormField(
             decoration: const InputDecoration(
               labelText: mainCameraHintText,
             ),
             keyboardType: TextInputType.text,
-            controller: mainCameraController,
+            controller: camerasController,
             validator: (text) {
               if (text == null || text.isEmpty) {
                 return mainCameraErrorText;
@@ -195,29 +189,16 @@ class _AddMobilePageState extends State<AddMobilePage> {
               return null;
             },
           ),
-// selfie camera field
+// display field
           TextFormField(
             decoration: const InputDecoration(
-              labelText: selfieCameraHintText,
+              labelText: displayText,
             ),
             keyboardType: TextInputType.text,
-            controller: selfieCameraController,
+            controller: displayController,
             validator: (text) {
               if (text == null || text.isEmpty) {
-                return selfieCameraErrorText;
-              }
-              return null;
-            },
-          ),// selfie camera field
-// battery field
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: batteryHintText,
-            ),
-            controller: batteryController,
-            validator: (text) {
-              if (text == null || text.isEmpty) {
-                return batteryErrorText;
+                return displayErrorText;
               }
               return null;
             },
@@ -231,6 +212,33 @@ class _AddMobilePageState extends State<AddMobilePage> {
             validator: (text) {
               if (text == null || text.isEmpty) {
                 return osErrorText;
+              }
+              return null;
+            },
+          ),
+// battery field
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: batteryHintText,
+            ),
+            controller: batteryController,
+            validator: (text) {
+              if (text == null || text.isEmpty) {
+                return batteryErrorText;
+              }
+              return null;
+            },
+          ),
+// display size
+          TextFormField(
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              labelText: displaySizeHintText,
+            ),
+            controller: displaySizeController,
+            validator: (text) {
+              if (text == null || text.isEmpty) {
+                return displaySizeErrorText;
               }
               return null;
             },

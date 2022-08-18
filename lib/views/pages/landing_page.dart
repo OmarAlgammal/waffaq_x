@@ -24,6 +24,7 @@ class LandingPage extends StatelessWidget {
         } else{
 
           final user = snapshot.data;
+          debugPrint('user : ${user!.email}');
           if (user == null) {
             return const LoginPage();
           }else{

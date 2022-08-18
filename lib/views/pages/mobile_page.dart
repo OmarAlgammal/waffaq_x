@@ -72,14 +72,12 @@ class MobilePage extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                MobileFeatureDetermination(mobileFeature: displayText, description: mobile.displaySize.toString(), brandColor: brandColor),
+                MobileFeatureDetermination(mobileFeature: displayText, description: mobile.display.toString(), brandColor: brandColor),
                 MobileFeatureDetermination(mobileFeature: processorText, description: mobile.processor.toString(), brandColor: brandColor),
                 MobileFeatureDetermination(mobileFeature: storageAndRamText, description: mobile.storageAndRam.toString(), brandColor: brandColor),
-                MobileFeatureDetermination(mobileFeature: mainCameraHintText, description: mobile.mainCameras.toString(), brandColor: brandColor),
-                MobileFeatureDetermination(mobileFeature: selfieCameraHintText, description: mobile.selfieCameras.toString(), brandColor: brandColor),
+                MobileFeatureDetermination(mobileFeature: mainCameraHintText, description: mobile.cameras.toString(), brandColor: brandColor),
                 MobileFeatureDetermination(mobileFeature: batteryText, description: mobile.battery.toString(), brandColor: brandColor),
                 MobileFeatureDetermination(mobileFeature: osText, description: mobile.os.toString(), brandColor: brandColor),
-                MobileFeatureDetermination(mobileFeature: selfieCameraHintText, description: mobile.selfieCameras.toString(), brandColor: brandColor),
               ],
             )
           ],
