@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:waffaq_x/models/admin_model.dart';
+import 'package:waffaq_x/models/admin/admin_model.dart';
 import 'package:waffaq_x/routes.dart';
 import 'package:waffaq_x/services/auth_services.dart';
 import 'package:waffaq_x/services/firestore_services.dart';

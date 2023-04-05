@@ -1,6 +1,7 @@
 
 
-import 'package:waffaq_x/views/models/mobile_theme.dart';
+
+import '../../models/brand_theme_models/mobile_theme.dart';
 
 abstract class CoverCompState{}
 

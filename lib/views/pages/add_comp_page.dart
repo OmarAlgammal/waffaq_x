@@ -9,7 +9,6 @@ import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/texts/api.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
-import 'package:waffaq_x/views/models/mobile_theme.dart';
 import 'package:waffaq_x/views/widgets/buttons/circular_button.dart';
 import 'package:waffaq_x/views/widgets/input/search_box_to_move.dart';
 import 'package:waffaq_x/views/widgets/show_my_snack_bar.dart';

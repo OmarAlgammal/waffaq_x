@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waffaq_x/controllers/add_data_cubit/add_data_cubit.dart';
-import 'package:waffaq_x/models/admin_model.dart';
+import 'package:waffaq_x/models/admin/admin_model.dart';
 import 'package:waffaq_x/services/auth_services.dart';
 import 'package:waffaq_x/utilities/constants/texts/api.dart';
 import 'package:waffaq_x/views/pages/home_page.dart';

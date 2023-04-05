@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:waffaq_x/models/admin_model.dart';
+import 'package:waffaq_x/models/admin/admin_model.dart';
 import 'package:waffaq_x/services/firestore_services.dart';
 import 'package:waffaq_x/utilities/constants/texts/api.dart';
 

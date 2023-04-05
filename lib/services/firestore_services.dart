@@ -48,6 +48,7 @@ class FirestoreServices {
   Stream<T> streamDoc<T> ({required String path, required T Function (Map<String, dynamic> map) builder}){
     return _fireStore.doc(path).snapshots().map((event) => builder(event.data()!));
   }
+
   Future<T> doc<T>({required String path, required T Function (Map<String, dynamic> map) builder}) async{
     final result = await _fireStore.doc(path).get();
     return builder(result.data() as Map<String, dynamic>);

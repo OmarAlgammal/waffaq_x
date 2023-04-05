@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waffaq_x/controllers/add_data_cubit/add_data_cubit.dart';
 import 'package:waffaq_x/controllers/add_data_cubit/add_data_state.dart';
 import 'package:waffaq_x/controllers/users_controller.dart';
-import 'package:waffaq_x/models/admin_model.dart';
+import 'package:waffaq_x/models/admin/admin_model.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/texts/api.dart';

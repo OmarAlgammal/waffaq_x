@@ -1,19 +1,19 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:waffaq_x/models/mobile/mobile.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
-import 'package:waffaq_x/views/models/id_theme.dart';
-import 'package:waffaq_x/views/models/mobile_theme.dart';
+
+import '../../models/brand_theme_models/brand_theme.dart';
+import '../../models/brand_theme_models/mobile_theme.dart';
 
 class MobilesFiltrationHelper {
   final double biggestPossibleDifferenceBetweenDisplaysInScreens = .1;
   final double biggestPossibleDifferenceBetweenDisplaysInGlass = .03;
 
-  List<MobileTheme> searchResult(
-      {required List<MobileTheme> mobileTheme,
-        required String searchText,}) {
+  List<MobileTheme> searchResult({
+    required List<MobileTheme> mobileTheme,
+    required String searchText,
+  }) {
     List<MobileTheme> filteredList = [];
     for (int i = 0; i < mobileTheme.length; i++) {
       Mobile mobile = mobileTheme[i].mobile;
@@ -27,8 +27,7 @@ class MobilesFiltrationHelper {
   }
 
   List<MobileTheme> getSearchResultWithTheme(
-      {required List<Mobile> mobiles,
-        required String searchText}) {
+      {required List<Mobile> mobiles, required String searchText}) {
     List<MobileTheme> mobileTheme = getMobilesWithTheme(mobiles: mobiles);
     List<MobileTheme> filteredList = [];
     for (int i = 0; i < mobileTheme.length; i++) {
@@ -42,23 +41,21 @@ class MobilesFiltrationHelper {
     return filteredList;
   }
 
-  List<IdTheme> getIdsWithTheme({required List<String> ids}){
-    List<IdTheme> idsThemes = [];
-    for (String id in ids){
+  List<BrandTheme> getIdsWithTheme({required List<String> ids}) {
+    List<BrandTheme> idsThemes = [];
+    for (String id in ids) {
       String brandName = id.split(' ').toList()[0];
       String mobileName = id.split(' ').toList()[1];
-      idsThemes.add(getIdWithTheme(mobileName: mobileName, brandName: brandName));
+      idsThemes
+          .add(getIdWithTheme(mobileName: mobileName, brandName: brandName));
     }
     return idsThemes;
   }
 
-
-  List<MobileTheme> getMobilesArrangementWithTheme(
-      List<dynamic> mobiles) {
-
+  List<MobileTheme> getMobilesArrangementWithTheme(List<dynamic> mobiles) {
     List<Mobile> myMobiles = [];
-    if (mobiles is List<MobileTheme>){
-      for (final mobile in mobiles){
+    if (mobiles is List<MobileTheme>) {
+      for (final mobile in mobiles) {
         myMobiles.add(mobile.mobile);
       }
       mobiles = myMobiles;
@@ -78,8 +75,7 @@ class MobilesFiltrationHelper {
     return list;
   }
 
-  List<MobileTheme> getMobilesWithTheme(
-      {required List<Mobile> mobiles}) {
+  List<MobileTheme> getMobilesWithTheme({required List<Mobile> mobiles}) {
     List<MobileTheme> myList = [];
     for (Mobile mobile in mobiles) {
       myList.add(getMobileWithTheme(mobile));
@@ -87,39 +83,67 @@ class MobilesFiltrationHelper {
     return myList;
   }
 
-  IdTheme getIdWithTheme({required String mobileName, required String brandName}){
+  BrandTheme getIdWithTheme(
+      {required String mobileName, required String brandName}) {
     debugPrint('brand name : $brandName');
     switch (brandName.toLowerCase()) {
       case 'apple':
-        return IdTheme(mobileName: mobileName, brandLogo: appleLogoText, brandColor: appleColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: appleLogoText,
+            brandColor: appleColor);
       case 'samsung':
-        return IdTheme(mobileName: mobileName, brandLogo: samsungLogoText, brandColor: samsungColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: samsungLogoText,
+            brandColor: samsungColor);
       case 'huawei':
-        return IdTheme(mobileName: mobileName, brandLogo: huaweiLogoText, brandColor: huaweiColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: huaweiLogoText,
+            brandColor: huaweiColor);
       case 'oppo':
-        return IdTheme(mobileName: mobileName, brandLogo: oppoLogoText, brandColor: oppoColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: oppoLogoText,
+            brandColor: oppoColor);
       case 'honor':
-        return IdTheme(mobileName: mobileName, brandLogo: honorLogoText, brandColor: honorColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: honorLogoText,
+            brandColor: honorColor);
       case 'vivo':
-        return IdTheme(mobileName: mobileName, brandLogo: vivoLogoText, brandColor: vivoColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: vivoLogoText,
+            brandColor: vivoColor);
       case 'xiaomi':
-        return IdTheme(mobileName: mobileName, brandLogo: xiaomiLogoText, brandColor: xiaomiColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: xiaomiLogoText,
+            brandColor: xiaomiColor);
       case 'realme':
-        return IdTheme(mobileName: mobileName, brandLogo: realmeLogoText, brandColor: realmeColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: realmeLogoText,
+            brandColor: realmeColor);
       case 'infinix':
-        return IdTheme(mobileName: mobileName, brandLogo: infinixLogoText, brandColor: infinixColor);
+        return BrandTheme(
+            mobileName: mobileName,
+            brandLogo: infinixLogoText,
+            brandColor: infinixColor);
     }
-    return IdTheme(mobileName: mobileName, brandLogo: nokiaLogoText, brandColor: nokiaColor);
+    return BrandTheme(
+        mobileName: mobileName,
+        brandLogo: nokiaLogoText,
+        brandColor: nokiaColor);
   }
-
 
   MobileTheme getMobileWithTheme(Mobile mobile) {
     switch (mobile.brandName.toLowerCase()) {
       case 'apple':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: appleLogoText,
-            brandColor: appleColor);
+            mobile: mobile, brandLogo: appleLogoText, brandColor: appleColor);
       case 'samsung':
         return MobileTheme(
             mobile: mobile,
@@ -127,34 +151,22 @@ class MobilesFiltrationHelper {
             brandColor: samsungColor);
       case 'huawei':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: huaweiLogoText,
-            brandColor: huaweiColor);
+            mobile: mobile, brandLogo: huaweiLogoText, brandColor: huaweiColor);
       case 'oppo':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: oppoLogoText,
-            brandColor: oppoColor);
+            mobile: mobile, brandLogo: oppoLogoText, brandColor: oppoColor);
       case 'honor':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: honorLogoText,
-            brandColor: honorColor);
+            mobile: mobile, brandLogo: honorLogoText, brandColor: honorColor);
       case 'vivo':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: vivoLogoText,
-            brandColor: vivoColor);
+            mobile: mobile, brandLogo: vivoLogoText, brandColor: vivoColor);
       case 'xiaomi':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: xiaomiLogoText,
-            brandColor: xiaomiColor);
+            mobile: mobile, brandLogo: xiaomiLogoText, brandColor: xiaomiColor);
       case 'realme':
         return MobileTheme(
-            mobile: mobile,
-            brandLogo: realmeLogoText,
-            brandColor: realmeColor);
+            mobile: mobile, brandLogo: realmeLogoText, brandColor: realmeColor);
       case 'infinix':
         return MobileTheme(
             mobile: mobile,
@@ -169,7 +181,7 @@ class MobilesFiltrationHelper {
       {required List<Mobile> mobiles, required String brandName}) {
     List<MobileTheme> list = [];
     List<Mobile> brandMobiles =
-    getBrandMobiles(mobiles: mobiles, brandName: brandName);
+        getBrandMobiles(mobiles: mobiles, brandName: brandName);
     for (Mobile mobile in brandMobiles) {
       list.add(getMobileWithTheme(mobile));
     }
@@ -198,9 +210,8 @@ class MobilesFiltrationHelper {
         mobiles: mobiles,
         mobile: mobile,
         biggestDifferenceBetweenScreenSizes:
-        biggestPossibleDifferenceBetweenDisplaysInScreens);
+            biggestPossibleDifferenceBetweenDisplaysInScreens);
   }
-
 
   List<MobileTheme> getGlassCompatibilities(
       {required List<Mobile> mobiles, required Mobile mobile}) {
@@ -208,7 +219,7 @@ class MobilesFiltrationHelper {
         mobiles: mobiles,
         mobile: mobile,
         biggestDifferenceBetweenScreenSizes:
-        biggestPossibleDifferenceBetweenDisplaysInGlass);
+            biggestPossibleDifferenceBetweenDisplaysInGlass);
   }
 
   List<MobileTheme> getDisplaysCompatibilities(
@@ -217,13 +228,13 @@ class MobilesFiltrationHelper {
         mobiles: mobiles,
         mobile: mobile,
         biggestDifferenceBetweenScreenSizes:
-        biggestPossibleDifferenceBetweenDisplaysInGlass);
+            biggestPossibleDifferenceBetweenDisplaysInGlass);
   }
 
   List<MobileTheme> getCompatibilities(
       {required List<Mobile> mobiles,
-        required Mobile mobile,
-        required double biggestDifferenceBetweenScreenSizes}) {
+      required Mobile mobile,
+      required double biggestDifferenceBetweenScreenSizes}) {
     String requiredBrandName = mobile.brandName.toLowerCase();
     String requiredMobileName = mobile.mobileName.toLowerCase();
     bool requiredMobileNotch = mobile.hasNotch;
@@ -234,12 +245,12 @@ class MobilesFiltrationHelper {
     // check if required mobile is from Apple brand
     if (requiredBrandName == appleText.toLowerCase()) {
       for (int mobileModelIndex = 0;
-      mobiles.length > mobileModelIndex;
-      mobileModelIndex++) {
+          mobiles.length > mobileModelIndex;
+          mobileModelIndex++) {
         Mobile comingModel = mobiles[mobileModelIndex];
         String comingBrand = mobiles[mobileModelIndex].brandName.toLowerCase();
         String comingMobileName =
-        mobiles[mobileModelIndex].mobileName.toLowerCase();
+            mobiles[mobileModelIndex].mobileName.toLowerCase();
 
         if (comingBrand == requiredBrandName &&
             comingModel.displaySize == mobile.displaySize &&
@@ -253,17 +264,17 @@ class MobilesFiltrationHelper {
     else {
       // first filter mobiles list by brands order in list
       for (int brandNameIndex = 0;
-      brandsNamesTextsList.length > brandNameIndex;
-      brandNameIndex++) {
+          brandsNamesTextsList.length > brandNameIndex;
+          brandNameIndex++) {
         String brandName = brandsNamesTextsList[brandNameIndex].toLowerCase();
         // then filter mobiles by screen sizes
         for (int mobileModelIndex = 0;
-        mobiles.length > mobileModelIndex;
-        mobileModelIndex++) {
+            mobiles.length > mobileModelIndex;
+            mobileModelIndex++) {
           String comingBrandName =
-          mobiles[mobileModelIndex].brandName.toLowerCase();
+              mobiles[mobileModelIndex].brandName.toLowerCase();
           String comingMobileName =
-          mobiles[mobileModelIndex].mobileName.toLowerCase();
+              mobiles[mobileModelIndex].mobileName.toLowerCase();
           Mobile comingMobile = mobiles[mobileModelIndex];
           bool comingCurvedScreen = comingMobile.curvedDisplay;
           bool comingNotch = comingMobile.hasNotch;
@@ -271,7 +282,6 @@ class MobilesFiltrationHelper {
               (comingMobile.displaySize - mobile.displaySize)
                   .abs()
                   .toStringAsFixed(2));
-
 
           if (brandName == comingBrandName &&
               comingBrandName != appleText.toLowerCase() &&

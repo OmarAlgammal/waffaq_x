@@ -5,7 +5,7 @@ import 'package:waffaq_x/controllers/brand_mobiles_bloc/brand_mobiles_state.dart
 import 'package:waffaq_x/models/mobile/mobile.dart';
 import 'package:waffaq_x/services/firestore_services.dart';
 import 'package:waffaq_x/utilities/constants/texts/api.dart';
-import 'package:waffaq_x/utilities/mobiles_filtration_helper.dart';
+import 'package:waffaq_x/utilities/helpers/mobiles_filtration_helper.dart';
 
 class BrandMobilesBloc extends Bloc<BrandMobilesEvent, BrandMobilesState> {
 

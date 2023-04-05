@@ -4,15 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:waffaq_x/controllers/brand_mobiles_bloc/brand_mobiles_bloc.dart';
-import 'package:waffaq_x/controllers/brand_mobiles_bloc/brand_mobiles_event.dart';
 import 'package:waffaq_x/controllers/brand_mobiles_bloc/brand_mobiles_state.dart';
+import 'package:waffaq_x/models/arguments/brandPageArguments.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/constantsIcons.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
-import 'package:waffaq_x/utilities/mobiles_filtration_helper.dart';
-import 'package:waffaq_x/views/models/arguments/brandPageArguments.dart';
-import 'package:waffaq_x/views/models/mobile_theme.dart';
+import 'package:waffaq_x/utilities/helpers/mobiles_filtration_helper.dart';
 import 'package:waffaq_x/views/widgets/assets/mobiles_list_is_empty.dart';
 import 'package:waffaq_x/views/widgets/buttons/back_arrow.dart';
 import 'package:waffaq_x/views/widgets/buttons/wipe_button.dart';
@@ -20,6 +18,8 @@ import 'package:waffaq_x/views/widgets/items_designs/mobile_item_design.dart';
 import 'package:waffaq_x/views/widgets/texts/error_occurred.dart';
 import 'package:waffaq_x/views/widgets/texts/loading.dart';
 import 'package:waffaq_x/views/widgets/texts/no_results_found.dart';
+
+import '../../models/brand_theme_models/mobile_theme.dart';
 
 class BrandPage extends StatefulWidget {
   const BrandPage({Key? key}) : super(key: key);

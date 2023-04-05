@@ -8,8 +8,7 @@ import 'package:waffaq_x/controllers/all_mobiles_bloc/all_mobiles_state.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
-import 'package:waffaq_x/utilities/mobiles_filtration_helper.dart';
-import 'package:waffaq_x/views/models/mobile_theme.dart';
+import 'package:waffaq_x/utilities/helpers/mobiles_filtration_helper.dart';
 import 'package:waffaq_x/views/widgets/buttons/wipe_button.dart';
 import 'package:waffaq_x/views/widgets/dividers/skinnyDivider.dart';
 import 'package:waffaq_x/views/widgets/input/search_box.dart';
@@ -19,6 +18,8 @@ import 'package:waffaq_x/views/widgets/texts/error_occurred.dart';
 import 'package:waffaq_x/views/widgets/texts/helper_text.dart';
 import 'package:waffaq_x/views/widgets/texts/loading.dart';
 import 'package:waffaq_x/views/widgets/texts/no_results_found.dart';
+
+import '../../models/brand_theme_models/mobile_theme.dart';
 
 class SelectMobilePage extends StatefulWidget {
   const SelectMobilePage({Key? key}) : super(key: key);

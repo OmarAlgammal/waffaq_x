@@ -6,7 +6,7 @@ import 'package:waffaq_x/controllers/all_mobiles_bloc/all_mobiles_state.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/texts/texts.dart';
-import 'package:waffaq_x/utilities/mobiles_filtration_helper.dart';
+import 'package:waffaq_x/utilities/helpers/mobiles_filtration_helper.dart';
 import 'package:waffaq_x/views/widgets/assets/search_helper_results.dart';
 import 'package:waffaq_x/views/widgets/buttons/wipe_button.dart';
 import 'package:waffaq_x/views/widgets/dividers/skinnyDivider.dart';

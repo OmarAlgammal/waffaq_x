@@ -1,7 +1,6 @@
 
 
-import 'package:waffaq_x/models/mobile/mobile.dart';
-import 'package:waffaq_x/views/models/mobile_theme.dart';
+import '../../models/brand_theme_models/mobile_theme.dart';
 
 abstract class BrandMobilesState{}
 

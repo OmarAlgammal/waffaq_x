@@ -8,7 +8,7 @@ import 'package:waffaq_x/routes.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/constantsIcons.dart';
-import 'package:waffaq_x/views/models/arguments/brandPageArguments.dart';
+import 'package:waffaq_x/models/arguments/brandPageArguments.dart';
 
 class BrandItemDesign extends StatelessWidget {
   const BrandItemDesign(

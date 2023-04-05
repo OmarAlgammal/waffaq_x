@@ -7,9 +7,8 @@ import 'package:waffaq_x/controllers/screen_comp_bloc/screen_comp_bloc.dart';
 import 'package:waffaq_x/routes.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
-import 'package:waffaq_x/views/models/arguments/comp_page_arg.dart';
-import 'package:waffaq_x/views/models/arguments/mobile_page_arguments.dart';
-import 'package:waffaq_x/views/models/mobile_theme.dart';
+
+import '../../../models/brand_theme_models/mobile_theme.dart';
 
 class MobileItemDesign extends StatelessWidget {
   const MobileItemDesign({Key? key, required this.mobileTheme, this.onPressed}) : super(key: key);
@@ -24,7 +23,6 @@ class MobileItemDesign extends StatelessWidget {
         padding: paddingV4,
         child: ListTile(
           onTap: (onPressed != null)? onPressed : (){
-            debugPrint('mobile item design: here');
             BlocProvider.of<ScreenCompBloc>(context).add(LoadScreenComp(mobile: mobileTheme.mobile));
             BlocProvider.of<GlassCompBloc>(context).add(
                 LoadGlassComp(
@@ -32,7 +30,7 @@ class MobileItemDesign extends StatelessWidget {
             BlocProvider.of<CoverCompBloc>(context).add(
                 LoadCoversComp(
                     mobile: mobileTheme.mobile));
-            Navigator.popAndPushNamed(context, AppRoutes.compatibilitiesPage, arguments: CompPageArg(mobileTheme: mobileTheme));
+            Navigator.popAndPushNamed(context, AppRoutes.compatibilitiesPage, arguments: mobileTheme);
           },
             contentPadding: paddingH8,
             tileColor: mobileTheme.brandColor,
@@ -50,7 +48,7 @@ class MobileItemDesign extends StatelessWidget {
                 color: whiteColor,
               ),
               onPressed: (){
-                Navigator.pushNamed(context, AppRoutes.mobilePage, arguments: MobilePageArguments(mobileTheme: mobileTheme));
+                Navigator.pushNamed(context, AppRoutes.mobilePage, arguments: mobileTheme);
               },
             )
         ),
