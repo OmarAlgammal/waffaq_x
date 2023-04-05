@@ -1,16 +1,33 @@
-# waffaq_x
+# Waffaq X
 
-A new Flutter project.
+Mobile Compatibility Checker is a Flutter app that helps mobile stores find the compatibility of covers and screen protectors for mobiles. It uses Firestore as the backend and for authentication.
 
-## Getting Started
+## Features
+* User authentication
+* User registration
+* User can view compatible covers and screen protectors for a mobile device
 
-This project is a starting point for a Flutter application.
+## Setup
+Clone the project repository.
+Navigate to the project directory and run flutter pub get to install the dependencies.
+Set up your Firebase project and add your google-services.json file to the android/app directory.
+Enable Authentication and Firestore in your Firebase project.
+Run the app using flutter run command.
+Project Structure
+The project follows the MVC architecture pattern. The folders and files are organized as follows:
 
-A few resources to get you started if this is your first Flutter project:
+lib/: The main application code
+models/: Contains the data models used in the app.
+repositories/: Contains the classes that handle data storage and retrieval.
+services/: Contains the classes that interact with Firebase services.
+ui/: Contains the screens, widgets and view models for the app.
+utils/: Contains utility classes used throughout the app.
+Dependencies
+The following some of dependencies were used in this project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+flutter_bloc: For state management.
+cloud_firestore: For interacting with Firestore.
+firebase_auth: For authentication with Firebase.
+firebase_storage: For storing and retrieving images from Firebase Storage.
+Freezed: For code generation
+Font Awesome Flutter: For icons
