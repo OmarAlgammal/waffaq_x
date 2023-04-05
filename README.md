@@ -19,9 +19,9 @@ The project follows the MVC architecture pattern. The folders and files are orga
 
 * lib/: The main application code
 * models/: Contains the data models used in the app.
-* repositories/: Contains the classes that handle data storage and retrieval.
+* controllers/: Handles business logic, including validation, calculations, and data manipulation.
 * services/: Contains the classes that interact with Firebase services.
-* ui/: Contains the screens, widgets and view models for the app.
+* views/: Contains the screens, widgets and view models for the app.
 * utils/: Contains utility classes used throughout the app.
 
 ## Dependencies
