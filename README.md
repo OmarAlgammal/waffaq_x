@@ -13,21 +13,23 @@ Navigate to the project directory and run flutter pub get to install the depende
 Set up your Firebase project and add your google-services.json file to the android/app directory.
 Enable Authentication and Firestore in your Firebase project.
 Run the app using flutter run command.
-Project Structure
+
+## Project Structure
 The project follows the MVC architecture pattern. The folders and files are organized as follows:
 
-lib/: The main application code
-models/: Contains the data models used in the app.
-repositories/: Contains the classes that handle data storage and retrieval.
-services/: Contains the classes that interact with Firebase services.
-ui/: Contains the screens, widgets and view models for the app.
-utils/: Contains utility classes used throughout the app.
-Dependencies
+* lib/: The main application code
+* models/: Contains the data models used in the app.
+* repositories/: Contains the classes that handle data storage and retrieval.
+* services/: Contains the classes that interact with Firebase services.
+* ui/: Contains the screens, widgets and view models for the app.
+* utils/: Contains utility classes used throughout the app.
+
+## Dependencies
 The following some of dependencies were used in this project:
 
-flutter_bloc: For state management.
-cloud_firestore: For interacting with Firestore.
-firebase_auth: For authentication with Firebase.
-firebase_storage: For storing and retrieving images from Firebase Storage.
-Freezed: For code generation
-Font Awesome Flutter: For icons
+* flutter_bloc: For state management.
+* cloud_firestore: For interacting with Firestore.
+* firebase_auth: For authentication with Firebase.
+* firebase_storage: For storing and retrieving images from Firebase Storage.
+* Freezed: For code generation
+* Font Awesome Flutter: For icons
