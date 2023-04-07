@@ -6,7 +6,7 @@ import 'package:waffaq_x/utilities/constants/texts/api.dart';
 
 class UsersController{
 
-  Stream<List<UserModel>> getAllUsers() {
-    return FirestoreServices.instance.streamCollection(path: usersPath, builder: (map) => UserModel.fromJson(map));
+  Stream<List<AdminModel>> getAllUsers() {
+    return FirestoreServices.instance.streamCollection(path: FireStorePathes.usersPath(''), builder: (map) => AdminModel.fromJson(map));
   }
 }

@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waffaq_x/controllers/add_comp_cubit/add_comp_cubit.dart';
 import 'package:waffaq_x/controllers/add_comp_cubit/add_comp_state.dart';
 import 'package:waffaq_x/models/mobile/mobile.dart';
-import 'package:waffaq_x/routes.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/texts/api.dart';
@@ -13,6 +12,8 @@ import 'package:waffaq_x/views/widgets/buttons/circular_button.dart';
 import 'package:waffaq_x/views/widgets/input/search_box_to_move.dart';
 import 'package:waffaq_x/views/widgets/show_my_snack_bar.dart';
 import 'package:waffaq_x/views/widgets/texts/loading.dart';
+
+import '../../utilities/routing/routes.dart';
 
 class AddCompPage extends StatefulWidget {
   const AddCompPage({Key? key}) : super(key: key);
@@ -130,7 +131,7 @@ class _AddCompPageState extends State<AddCompPage> {
                       if (firstMobileName != secondMobileName) {
                         ///TODO: change comp path according to comp type
                         BlocProvider.of<AddCompCubit>(context).addComp(
-                            path: coversPath,
+                            path: FireStorePathes.coversPath,
                             firstMobile: firstMobile,
                             secondMobile: secondMobile);
                       }

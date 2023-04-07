@@ -1,4 +1,4 @@
-class UserModel {
+class AdminModel {
   String uid;
   String? email, name;
   bool isHeTheMainController;
@@ -6,7 +6,7 @@ class UserModel {
       abilityToRemoveComp,
       abilityToAddMobiles;
 
-  UserModel(
+  AdminModel(
       {required this.uid,
       this.email,
       this.name,
@@ -16,7 +16,7 @@ class UserModel {
       this.abilityToAddMobiles = false,
       });
 
-  factory UserModel.fromJson(Map<String, dynamic> map) => UserModel(
+  factory AdminModel.fromJson(Map<String, dynamic> map) => AdminModel(
         uid: map['uid'],
         email: map['email'],
         name: map['name'],

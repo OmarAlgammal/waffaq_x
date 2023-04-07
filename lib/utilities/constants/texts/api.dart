@@ -1,13 +1,15 @@
 
-const mobilesPath = 'mobiles/';
-const coversPath = 'covers/';
-const adminPath = 'admins/';
-const usersPath = 'users/';
+class FireStorePathes{
+  static const mobilesPath = 'mobiles/';
+  static const coversPath = 'covers/';
+  static const adminPath = 'admins/';
+  static String usersPath(String uid) => 'users/$uid/';
+  static const uidParameter = 'uid';
+  static const mobileIdParameter = 'mobileId';
+  static const brandNameParameter = 'brandName';
+  static const mobileNameParameter = 'mobileName';
+  static const displaySizeParameter = 'displaySize';
+  static const hasNotchParameter = 'hasNotch';
+  static const compParameter = 'comp';
+}
 
-const uidParameter = 'uid';
-const mobileIdParameter = 'mobileId';
-const brandNameParameter = 'brandName';
-const mobileNameParameter = 'mobileName';
-const displaySizeParameter = 'displaySize';
-const hasNotchParameter = 'hasNotch';
-const compParameter = 'comp';

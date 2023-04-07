@@ -4,11 +4,11 @@ import 'package:waffaq_x/controllers/comp_event.dart';
 import 'package:waffaq_x/controllers/cover_comp_bloc/cover_comp_bloc.dart';
 import 'package:waffaq_x/controllers/glass_comp_bloc/glass_comp_bloc.dart';
 import 'package:waffaq_x/controllers/screen_comp_bloc/screen_comp_bloc.dart';
-import 'package:waffaq_x/routes.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 
 import '../../../models/brand_theme_models/mobile_theme.dart';
+import '../../../utilities/routing/routes.dart';
 
 class MobileItemDesign extends StatelessWidget {
   const MobileItemDesign({Key? key, required this.mobileTheme, this.onPressed}) : super(key: key);

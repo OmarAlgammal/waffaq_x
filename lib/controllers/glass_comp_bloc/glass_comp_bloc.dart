@@ -23,13 +23,13 @@ class GlassCompBloc extends Bloc<CompEvent, GlassCompState> {
 
     try {
       final stream = _fireStoreServices.streamCollection(
-          path: mobilesPath,
+          path: FireStorePathes.mobilesPath,
           builder: (map) => Mobile.fromJson(map),
           query: (query) {
             if (event.mobile.brandName == appleText) {
-              query.where(brandNameParameter, isEqualTo: appleText);
+              query.where(FireStorePathes.brandNameParameter, isEqualTo: appleText);
             } else {
-              query.where(brandNameParameter, isNotEqualTo: appleText);
+              query.where(FireStorePathes.brandNameParameter, isNotEqualTo: appleText);
             }
             return query;
           });

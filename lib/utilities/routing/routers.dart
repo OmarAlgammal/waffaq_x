@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:waffaq_x/utilities/routing/routes.dart';
 import 'package:waffaq_x/views/pages/add_comp_page.dart';
 import 'package:waffaq_x/views/pages/add_mobile_page.dart';
 import 'package:waffaq_x/views/pages/brand_page.dart';
@@ -12,7 +13,6 @@ import 'package:waffaq_x/views/pages/mobile_page.dart';
 import 'package:waffaq_x/views/pages/search_for_comp_page.dart';
 import 'package:waffaq_x/views/pages/select_mobile_page.dart';
 import 'package:waffaq_x/views/pages/set_admin_page.dart';
-import 'routes.dart';
 
 
 Route<dynamic> onGenerate(RouteSettings settings) {

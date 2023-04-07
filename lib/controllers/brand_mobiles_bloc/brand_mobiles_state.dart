@@ -6,7 +6,7 @@ abstract class BrandMobilesState{}
 
 class BrandMobilesInitialState extends BrandMobilesState{}
 
-class LoadingBrandMobiles extends BrandMobilesState{}
+class BrandMobilesLoading extends BrandMobilesState{}
 
 class BrandMobilesLoadedSuccessfully extends BrandMobilesState{
   final List<MobileTheme> mobilesTheme;

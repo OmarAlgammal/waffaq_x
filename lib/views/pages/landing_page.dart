@@ -5,12 +5,16 @@ import 'package:waffaq_x/views/pages/home_page.dart';
 import 'package:waffaq_x/views/pages/login_page.dart';
 import 'package:waffaq_x/views/widgets/texts/loading.dart';
 
+import '../../models/admin/admin_model.dart';
+import '../../services/firestore_services.dart';
+
 class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
+  LandingPage({Key? key}) : super(key: key);
+
+  AuthServices authServices = AuthServices();
 
   @override
   Widget build(BuildContext context) {
-    AuthServices authServices = AuthServices();
     return StreamBuilder<User?>(
       stream: authServices.loginStatus(),
       builder: (context, snapshot) {

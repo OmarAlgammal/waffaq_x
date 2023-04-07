@@ -1,7 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:waffaq_x/models/mobile/mobile.dart';
-import 'package:waffaq_x/utilities/constants/texts/api.dart';
 
 class FirestoreServices {
   final FirebaseFirestore _fireStore = FirebaseFirestore.instance;
@@ -45,20 +42,33 @@ class FirestoreServices {
     return result;
   }
 
-  Stream<T> streamDoc<T> ({required String path, required T Function (Map<String, dynamic> map) builder}){
-    return _fireStore.doc(path).snapshots().map((event) => builder(event.data()!));
+  Stream<T> documentStream<T>(
+      {required String path,
+      required T Function(Map<String, dynamic> map) builder}) {
+    return _fireStore
+        .doc(path)
+        .snapshots()
+        .map((event) => builder(event.data()!));
   }
 
-  Future<T> doc<T>({required String path, required T Function (Map<String, dynamic> map) builder}) async{
+  Future<T> document<T>(
+      {required String path,
+      required T Function(Map<String, dynamic> map) builder}) async {
     final result = await _fireStore.doc(path).get();
     return builder(result.data() as Map<String, dynamic>);
   }
 
-  Future<void> setData({required String path, required Map<String, dynamic> data}) async{
-    await _fireStore.doc(path).set(data);
+  Future<void> setData(
+      {required String path, required Map<String, dynamic> data}) async {
+    //return await _fireStore.doc(path).set(data);
+    return await FirebaseFirestore.instance.doc(path).set(data);
   }
 
-  Future<void> deleteData({required String path,}) async{
+
+
+  Future<void> deleteData({
+    required String path,
+  }) async {
     await _fireStore.doc(path).delete();
   }
 }

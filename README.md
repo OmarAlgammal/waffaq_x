@@ -2,6 +2,18 @@
 
 Mobile Compatibility Checker is a Flutter app that helps mobile stores find the compatibility of covers and screen protectors for mobiles. It uses Firestore as the backend and for authentication.
 
+## Screenshots
+<div>
+    <img src="waffaqx_1.png" width="300" />
+    <img src="waffaqx_2.png" width="300" />
+    <img src="waffaqx_3.png" width="300" />
+    <img src="waffaqx_4.png" width="300" />
+    <img src="waffaqx_5.png" width="300" />
+    <img src="waffaqx_6.png" width="300" />
+    <img src="waffaqx_7.png" width="300" />
+    <img src="waffaqx_8.png" width="300" />
+</div>
+
 ## Features
 * User authentication
 * User registration

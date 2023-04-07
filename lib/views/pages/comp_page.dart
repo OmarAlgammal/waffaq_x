@@ -47,15 +47,17 @@ class _CompatibilitiesPageState extends State<CompatibilitiesPage> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
-            '$compWithText ${mobileModel.brandName} ${mobileModel.mobileName}',
-          ),
+          toolbarHeight: 72,
         ),
         backgroundColor: whiteColor,
         body: Padding(
-            padding: padding8,
+            padding: EdgeInsets.only(right: 8.0, bottom: 8.0, left: 8.0),
             child: ListView(
+              padding: EdgeInsets.zero,
               children: [
+                Text('$compWithText ${mobileModel.brandName} - ${mobileModel.mobileName}', style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  overflow: TextOverflow.fade
+                ),),
                 gap8,
 // categories
                 Row(

@@ -42,7 +42,7 @@ class _SetAdminPageState extends State<SetAdminPage> {
         ),
         body: Padding(
           padding: padding8,
-          child: StreamBuilder<List<UserModel>>(
+          child: StreamBuilder<List<AdminModel>>(
             stream: _usersController.getAllUsers(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -55,7 +55,7 @@ class _SetAdminPageState extends State<SetAdminPage> {
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
 
-                    UserModel userModel = snapshot.data![index];
+                    AdminModel userModel = snapshot.data![index];
                     abilityToAddMobilesValue = userModel.abilityToAddMobiles;
                     abilityToAddCoverCompValue = userModel.abilityToAddCoverComp;
                     abilityToRemoveCompValue = userModel.abilityToRemoveComp;
@@ -184,7 +184,7 @@ class _SetAdminPageState extends State<SetAdminPage> {
                                                     context)
                                                     .addData(
                                                     path:
-                                                    '$usersPath${userModel.uid}',
+                                                    '${FireStorePathes.usersPath}${userModel.uid}',
                                                     data: userModel
                                                         .toJson());
                                               },

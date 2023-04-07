@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:waffaq_x/services/auth_services.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
@@ -17,9 +15,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  AuthServices authServices = AuthServices();
+
   @override
   Widget build(BuildContext context) {
-    AuthServices authServices = AuthServices();
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -29,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Flexible(
-                  flex: 2,
+                  flex: 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -39,9 +38,14 @@ class _LoginPageState extends State<LoginPage> {
                         child: SvgPicture.asset(appLogoPath),
                       ),
                       gap16,
-                      Text(youWelcomeIn,
-
-                          style: Theme.of(context).textTheme.headline5!.copyWith(color: greenColor, fontWeight: FontWeight.w600)),
+                      Text(
+                        youWelcomeIn,
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: greenColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                      ),
                     ],
                   ),
                 ),
@@ -50,14 +54,13 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
                       gap8,
 // login with facebook
-                    // TODO: complete login with facebook
+                      // TODO: complete login with facebook
                       gap8,
                       ListTile(
                         tileColor: blueColor,
-                        onTap: () async{
+                        onTap: () async {
                           await authServices.signInWithFacebook();
                         },
                         leading: const Icon(

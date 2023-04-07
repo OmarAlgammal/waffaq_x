@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waffaq_x/controllers/all_mobiles_bloc/all_mobiles_event.dart';
 import 'package:waffaq_x/controllers/all_mobiles_bloc/all_mobiles_state.dart';
@@ -21,13 +22,15 @@ class AllMobilesBloc extends Bloc<LoadAllMobilesEvent, AllMobilesState> {
     emit(LoadingAllMobiles());
     try {
       final stream = _firebaseFirestore.streamCollection(
-          path: mobilesPath,
+          path: FireStorePathes.mobilesPath,
           builder: (map) {
             return Mobile.fromJson(map);
           });
+      debugPrint('after stream');
       await emit.forEach<List<Mobile>>(stream, onData: (List<Mobile> data) {
         List<MobileTheme> mobilesTheme =
             _filtrationHelper.getMobilesWithTheme(mobiles: data);
+        debugPrint('after stream two');
         return MobilesLoadedSuccessfully(mobilesTheme: mobilesTheme);
       });
     } catch (e) {

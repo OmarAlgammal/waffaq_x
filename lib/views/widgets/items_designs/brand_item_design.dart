@@ -4,11 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:waffaq_x/controllers/brand_mobiles_bloc/brand_mobiles_bloc.dart';
 import 'package:waffaq_x/controllers/brand_mobiles_bloc/brand_mobiles_event.dart';
-import 'package:waffaq_x/routes.dart';
 import 'package:waffaq_x/utilities/constants/constantsColors.dart';
 import 'package:waffaq_x/utilities/constants/constantsDimens.dart';
 import 'package:waffaq_x/utilities/constants/constantsIcons.dart';
 import 'package:waffaq_x/models/arguments/brandPageArguments.dart';
+
+import '../../../utilities/routing/routes.dart';
 
 class BrandItemDesign extends StatelessWidget {
   const BrandItemDesign(

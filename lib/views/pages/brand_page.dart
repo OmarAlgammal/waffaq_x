@@ -53,7 +53,7 @@ class _BrandPageState extends State<BrandPage> {
               ),
               BlocBuilder<BrandMobilesBloc, BrandMobilesState>(
                 builder: (context, state) {
-                  if (state is LoadingBrandMobiles) {
+                  if (state is BrandMobilesLoading) {
                     return const Loading();
                   } else if (state is BrandMobilesLoadedSuccessfully) {
                     /// convert list of mobiles to list of mobile theme

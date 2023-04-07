@@ -15,15 +15,15 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   gap: ^2.0.0
-  flutter_svg: ^1.1.1+1
+  flutter_svg: ^2.0.4
   json_serializable: ^6.3.1
   build_runner: ^2.2.0
   freezed: ^2.1.0+1
-  firebase_core: ^1.20.0
-  firebase_auth: ^3.5.0
-  google_sign_in: ^5.4.0
-  flutter_facebook_auth: ^4.4.0+1
-  cloud_firestore: ^3.4.0
+  firebase_core: ^2.9.0
+  firebase_auth: ^4.4.0
+  google_sign_in: ^6.0.2
+  flutter_facebook_auth: ^5.0.8
+  cloud_firestore: ^4.5.0
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
   equatable: ^2.0.3

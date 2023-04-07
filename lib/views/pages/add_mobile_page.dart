@@ -90,7 +90,7 @@ class _AddMobilePageState extends State<AddMobilePage> {
                           hasNotch: _hasNotch, curvedDisplay: _curvedDisplay
                       );
                       String mobileName = '${mobileModel.brandName} ${mobileModel.mobileName}';
-                      BlocProvider.of<AddDataCubit>(context).addData(path: '$mobilesPath$mobileName', data: mobileModel.toJson());
+                      BlocProvider.of<AddDataCubit>(context).addData(path: '${FireStorePathes.mobilesPath}$mobileName', data: mobileModel.toJson());
                     }
                   });
 

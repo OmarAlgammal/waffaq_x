@@ -28,10 +28,11 @@ class AddCompCubit extends Cubit<AddCompState> {
       List<List<String>> comps = await _fireStoreServices.collection(
           path: path,
           builder: (map) {
-            List<String> compIds = (map[compParameter] as List).cast<String>();
+            List<String> compIds =
+                (map[FireStorePathes.compParameter] as List).cast<String>();
             return compIds;
           },
-          query: (query) => query.where(compParameter,
+          query: (query) => query.where(FireStorePathes.compParameter,
               arrayContainsAny: [firstMobileName, secondMobileName]));
 
       /// if there is more than one comp collection for these two mobiles
@@ -48,24 +49,26 @@ class AddCompCubit extends Cubit<AddCompState> {
               return emit(CompAreAlreadyExist());
             }
             list.add(secondMobileName);
-            await _fireStoreServices
-                .setData(path: '$path${list[0]}', data: {compParameter: list});
+            await _fireStoreServices.setData(
+                path: '$path${list[0]}',
+                data: {FireStorePathes.compParameter: list});
             return emit(CompAddedSuccessfully());
           } else if (mobileName == secondMobileName) {
-            if (list.contains(firstMobileName) ==  false) {
+            if (list.contains(firstMobileName) == false) {
               return emit(CompAreAlreadyExist());
             }
             list.add(firstMobileName);
-            await _fireStoreServices
-                .setData(path: '$path${list[0]}', data: {compParameter: list});
+            await _fireStoreServices.setData(
+                path: '$path${list[0]}',
+                data: {FireStorePathes.compParameter: list});
             return emit(CompAddedSuccessfully());
           }
         }
       }
 
       List<String> list = [firstMobileName, secondMobileName];
-      await _fireStoreServices
-          .setData(path: firstMobilePath, data: {compParameter: list});
+      await _fireStoreServices.setData(
+          path: firstMobilePath, data: {FireStorePathes.compParameter: list});
       emit(CompAddedSuccessfully());
     } catch (e) {
       return emit(FailedToAddComp());

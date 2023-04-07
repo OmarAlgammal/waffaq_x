@@ -15,9 +15,7 @@ class MobileFeatureDetermination extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(alignment: Alignment.centerRight, child: Text(mobileFeature, style: TextStyle(
-          fontSize: size16
-        ),)),
+        Align(alignment: Alignment.centerRight, child: Text(mobileFeature, style: Theme.of(context).textTheme.titleMedium,)),
         Container(
           decoration: BoxDecoration(
             color: brandColor,
@@ -32,10 +30,7 @@ class MobileFeatureDetermination extends StatelessWidget {
                   flex: 1,
                   child: Text(
                     description,
-                    style: const TextStyle(
-                      color: whiteColor,
-                      fontSize: size18,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: whiteColor,),
                   ),
                 ),
               ],

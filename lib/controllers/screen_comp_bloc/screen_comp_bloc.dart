@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waffaq_x/controllers/comp_event.dart';
 import 'package:waffaq_x/controllers/screen_comp_bloc/screen_comp_state.dart';
@@ -23,13 +22,15 @@ class ScreenCompBloc extends Bloc<CompEvent, ScreenCompState> {
     emit(LoadingScreenComp());
     try {
       final stream = _fireStoreServices.streamCollection(
-          path: mobilesPath,
+          path: FireStorePathes.mobilesPath,
           builder: (map) => Mobile.fromJson(map),
           query: (query) {
             if (event.mobile.brandName == appleText) {
-              query.where(brandNameParameter, isEqualTo: appleText);
+              query.where(FireStorePathes.brandNameParameter,
+                  isEqualTo: appleText);
             } else {
-              query.where(brandNameParameter, isNotEqualTo: appleText);
+              query.where(FireStorePathes.brandNameParameter,
+                  isNotEqualTo: appleText);
             }
             return query;
           });

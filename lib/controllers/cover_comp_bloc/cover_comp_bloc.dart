@@ -24,21 +24,22 @@ class CoverCompBloc extends Bloc<CompEvent, CoverCompState> {
           '${event.mobile.brandName} ${event.mobile.mobileName}';
 
       List<List<String>> compIds = await _fireStoreServices.collection(
-          path: coversPath,
+          path: FireStorePathes.coversPath,
           builder: (map) {
-            List<String> compIds = (map[compParameter] as List).cast<String>();
+            List<String> compIds =
+                (map[FireStorePathes.compParameter] as List).cast<String>();
             return compIds;
           },
-          query: (query) =>
-              query.where(compParameter, arrayContains: mobileName));
+          query: (query) => query.where(FireStorePathes.compParameter,
+              arrayContains: mobileName));
 
       List<MobileTheme> comp = [];
 
       for (List<String> list in compIds) {
         for (final id in list) {
           if (id != mobileName) {
-            Mobile mobile = await _fireStoreServices.doc(
-                path: '$mobilesPath$id',
+            Mobile mobile = await _fireStoreServices.document(
+                path: '$FireStorePathes.mobilesPath$id',
                 builder: (map) {
                   return Mobile.fromJson(map);
                 });
